@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "25t8VT5yExxuKkaUJ+3EgqlMSEo0KPCC37OJLxgYp0sXW7juDSEvp6xbe9CpmJ0hMMiwSj9NQU5xG5HZLfi/6g==",
+  "success": true,
+  "projectFilePath": "G:\\Github-Gitlab\\ETS2Trainer\\ETS2Trainer\\ETS2Trainer.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Saniee\\.nuget\\packages\\memory.dll.x64\\1.2.21\\memory.dll.x64.1.2.21.nupkg.sha512",
+    "C:\\Users\\Saniee\\.nuget\\packages\\system.security.principal.windows\\5.0.0\\system.security.principal.windows.5.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}
