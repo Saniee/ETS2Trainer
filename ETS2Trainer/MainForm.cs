@@ -87,5 +87,30 @@ namespace ETS2Trainer
                 m.WriteMemory("eurotrucks2.exe+01958BA8,195C", "int", EXPAmount.Text);
             }
         }
+
+        private void rgch_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rgch.Checked)
+            {
+                m.WriteMemory("eurotrucks2.exe+A361E8", "bytes", "83 79 10 10");
+            } 
+            else
+            {
+                m.WriteMemory("eurotrucks2.exe+A361E8", "bytes", "48 39 41 10");
+            }
+        }
+
+        private void rmd_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rmd.Checked)
+            {
+                m.WriteMemory("eurotrucks2.exe+6B782E", "bytes", "48 01 D8");
+            }
+            else
+            {
+                m.WriteMemory("eurotrucks2.exe+6B782E", "bytes", "48 2B C3");
+            }
+        }
     }
 }
+

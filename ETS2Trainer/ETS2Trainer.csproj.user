@@ -4,7 +4,7 @@
     <_LastSelectedProfileId>G:\Github-Gitlab\ETS2Trainer\ETS2Trainer\Properties\PublishProfiles\FolderProfile.pubxml</_LastSelectedProfileId>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Update="Form1.cs">
+    <Compile Update="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>
