@@ -6,13 +6,16 @@
     <UseWindowsForms>true</UseWindowsForms>
     <ApplicationManifest>app.manifest</ApplicationManifest>
     <Platforms>AnyCPU;x64;ARM64</Platforms>
-    <ApplicationIcon>mypfp.ico</ApplicationIcon>
-    <Version>1.0.1</Version>
+    <ApplicationIcon>tenebris-vector-art.ico</ApplicationIcon>
+    <Version>1.0.3</Version>
     <NeutralLanguage></NeutralLanguage>
+    <AssemblyVersion>1.0.3.0</AssemblyVersion>
+    <FileVersion>1.0.3.0</FileVersion>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="Memory.dll.x64" Version="1.2.21" />
+    <PackageReference Include="System.Memory" Version="4.5.4" />
     <PackageReference Include="System.Security.Principal.Windows" Version="5.0.0" />
   </ItemGroup>
 

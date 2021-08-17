@@ -111,7 +111,7 @@ namespace ETS2Trainer
             // 
             // MyPFP
             // 
-            this.MyPFP.Image = global::ETS2Trainer.Properties.Resources.mypfp;
+            this.MyPFP.Image = ((System.Drawing.Image)(resources.GetObject("MyPFP.Image")));
             this.MyPFP.Location = new System.Drawing.Point(12, 184);
             this.MyPFP.Name = "MyPFP";
             this.MyPFP.Size = new System.Drawing.Size(80, 80);
@@ -181,8 +181,11 @@ namespace ETS2Trainer
             this.Controls.Add(this.MoneyAmount);
             this.Controls.Add(this.SetEXP);
             this.Controls.Add(this.SetMoney);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "MainForm";
+            this.ShowIcon = false;
             this.Text = "ETS2 Trainer (By Saniee)";
             this.Shown += new System.EventHandler(this.MainForm_Shown);
             ((System.ComponentModel.ISupportInitialize)(this.MyPFP)).EndInit();

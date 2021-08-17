@@ -1,12 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Memory;
 
@@ -68,7 +63,7 @@ namespace ETS2Trainer
                 // m.WriteMemory("eurotrucks2.exe+0170D110,10,10", "int", MoneyAmount.Text);
                 
                 // Public Beta 1.41
-                m.WriteMemory("eurotrucks2.exe+01958BA8,10,10", "int", MoneyAmount.Text);
+                m.WriteMemory("eurotrucks2.exe+0195BF28,10,10", "int", MoneyAmount.Text);
             }
         }
 
@@ -84,7 +79,7 @@ namespace ETS2Trainer
                 //m.WriteMemory("eurotrucks2.exe+18E849B7D9C,FC,0,740,278", "int", EXPAmount.Text);
 
                 // Public Beta 1.41
-                m.WriteMemory("eurotrucks2.exe+01958BA8,195C", "int", EXPAmount.Text);
+                m.WriteMemory("eurotrucks2.exe+0195BF28,195C", "int", EXPAmount.Text);
             }
         }
 
@@ -92,23 +87,31 @@ namespace ETS2Trainer
         {
             if (rgch.Checked)
             {
-                m.WriteMemory("eurotrucks2.exe+A361E8", "bytes", "83 79 10 10");
+                m.WriteMemory("eurotrucks2.exe+A36F58", "bytes", "83 79 10 00");
             } 
             else
             {
-                m.WriteMemory("eurotrucks2.exe+A361E8", "bytes", "48 39 41 10");
+                m.WriteMemory("eurotrucks2.exe+A36F58", "bytes", "48 39 41 10");
             }
         }
 
         private void rmd_CheckedChanged(object sender, EventArgs e)
         {
+            //UIntPtr allocMemAddress;
+
             if (rmd.Checked)
             {
-                m.WriteMemory("eurotrucks2.exe+6B782E", "bytes", "48 01 D8");
+
+                m.WriteMemory("eurotrucks2.exe+6B825E", "bytes", "48 01 D8");
+
+                //byte[] asm = new byte[4096];
+                //byte[] data = { 0x48, 0x01, 0xD8, 0x80, 0x79, 0x64, 0x00, 0xE9, 0x29, 0x78, 0x6C };
+                //asm = data;
+                //allocMemAddress = m.CreateCodeCave("eurotrucks2.exe+0x6B782E", asm, 6);
             }
             else
             {
-                m.WriteMemory("eurotrucks2.exe+6B782E", "bytes", "48 2B C3");
+                m.WriteMemory("eurotrucks2.exe+6B825E", "bytes", "48 2B C3");
             }
         }
     }
