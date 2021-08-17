@@ -13,9 +13,11 @@ Releases on the unstable branches like beta/experimental will be published as .r
 # Hacks that are in Releases
 SetMoney - Self Explanatory (You need to use the default currency) <br />
 SetEXP - Sefl Explanatory <br />
-
-# Hacks that are in Pre-Releases AKA Testing
 Bypass Garage Money Check - Removes the need of having the money to buy a garage. <br />
-Reverse Money Deduction - this reverse every deduction of money from your account and makes it so instead of removing the balance it adds it.
+Reverse Money Deduction - this reverse every deduction of money from your account and makes it so instead of removing the balance it adds it.<br />
+
+# ~~Hacks that are in Pre-Releases AKA Testing~~
+~~Bypass Garage Money Check - Removes the need of having the money to buy a garage.~~ <br />
+~~Reverse Money Deduction - this reverse every deduction of money from your account and makes it so instead of removing the balance it adds it.~~
 
 ![ets2trainer](https://i.imgur.com/cd34k2f.png)
