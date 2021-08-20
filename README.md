@@ -1,3 +1,5 @@
+![GitHub release (latest by date)](https://img.shields.io/github/downloads/Saniee/ETS2Trainer/latest/total)
+
 # ETS2 Trainer
 # The Trainer needs a Admin privilages!
 
