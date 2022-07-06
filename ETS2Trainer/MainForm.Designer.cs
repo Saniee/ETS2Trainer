@@ -42,6 +42,7 @@ namespace ETS2Trainer
             this.Instructions = new System.Windows.Forms.Label();
             this.rgch = new System.Windows.Forms.CheckBox();
             this.rmd = new System.Windows.Forms.CheckBox();
+            this.gbch = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.MyPFP)).BeginInit();
             this.SuspendLayout();
             // 
@@ -135,11 +136,11 @@ namespace ETS2Trainer
             this.Instructions.BackColor = System.Drawing.SystemColors.Control;
             this.Instructions.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Instructions.ForeColor = System.Drawing.Color.Green;
-            this.Instructions.Location = new System.Drawing.Point(161, 145);
+            this.Instructions.Location = new System.Drawing.Point(269, 210);
             this.Instructions.Name = "Instructions";
-            this.Instructions.Size = new System.Drawing.Size(246, 42);
+            this.Instructions.Size = new System.Drawing.Size(154, 63);
             this.Instructions.TabIndex = 8;
-            this.Instructions.Text = "To see the changes, \r\ngo into the map and then go back.";
+            this.Instructions.Text = "To see the changes, \r\ngo into the map and \r\nthen go back.";
             // 
             // rgch
             // 
@@ -147,9 +148,9 @@ namespace ETS2Trainer
             this.rgch.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.rgch.Location = new System.Drawing.Point(13, 83);
             this.rgch.Name = "rgch";
-            this.rgch.Size = new System.Drawing.Size(229, 25);
+            this.rgch.Size = new System.Drawing.Size(293, 25);
             this.rgch.TabIndex = 9;
-            this.rgch.Text = "Bypass Garage Money Check";
+            this.rgch.Text = "Bypass Garage Upgrade Money Check";
             this.rgch.UseVisualStyleBackColor = true;
             this.rgch.CheckedChanged += new System.EventHandler(this.rgch_CheckedChanged);
             // 
@@ -165,11 +166,24 @@ namespace ETS2Trainer
             this.rmd.UseVisualStyleBackColor = true;
             this.rmd.CheckedChanged += new System.EventHandler(this.rmd_CheckedChanged);
             // 
+            // gbch
+            // 
+            this.gbch.AutoSize = true;
+            this.gbch.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.gbch.Location = new System.Drawing.Point(13, 145);
+            this.gbch.Name = "gbch";
+            this.gbch.Size = new System.Drawing.Size(259, 25);
+            this.gbch.TabIndex = 11;
+            this.gbch.Text = "Bypass Garage Buy Money Check";
+            this.gbch.UseVisualStyleBackColor = true;
+            this.gbch.CheckedChanged += new System.EventHandler(this.gbch_CheckedChanged);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(419, 281);
+            this.Controls.Add(this.gbch);
             this.Controls.Add(this.rmd);
             this.Controls.Add(this.rgch);
             this.Controls.Add(this.Instructions);
@@ -186,7 +200,7 @@ namespace ETS2Trainer
             this.MaximizeBox = false;
             this.Name = "MainForm";
             this.ShowIcon = false;
-            this.Text = "ETS2 Trainer (By Saniee)";
+            this.Text = "ETS2 Trainer";
             this.Shown += new System.EventHandler(this.MainForm_Shown);
             ((System.ComponentModel.ISupportInitialize)(this.MyPFP)).EndInit();
             this.ResumeLayout(false);
@@ -208,6 +222,7 @@ namespace ETS2Trainer
         private System.Windows.Forms.Label Instructions;
         private System.Windows.Forms.CheckBox rgch;
         private System.Windows.Forms.CheckBox rmd;
+        private System.Windows.Forms.CheckBox gbch;
     }
 }
 

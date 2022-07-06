@@ -66,7 +66,14 @@ namespace ETS2Trainer
                 // m.WriteMemory("eurotrucks2.exe+0195BF28,10,10", "int", MoneyAmount.Text);
 
                 // Public Beta 1.42 Build: 7503285
-                m.WriteMemory("eurotrucks2.exe+01965D38,10,10", "int", MoneyAmount.Text);
+                //m.WriteMemory("eurotrucks2.exe+01965D38,10,10", "int", MoneyAmount.Text);
+
+                // Game Version XXX
+                //m.WriteMemory("eurotrucks2.exe+01A0E348,10,10", "int", MoneyAmount.Text);
+
+                // Game Version 1.44.1.10s Build: 8879813
+                m.WriteMemory("eurotrucks2.exe+01AEA4B8,10,10", "int", MoneyAmount.Text);
+                MoneyAmount.Text = "";
             }
         }
 
@@ -85,39 +92,51 @@ namespace ETS2Trainer
                 // m.WriteMemory("eurotrucks2.exe+0195BF28,195C", "int", EXPAmount.Text);
 
                 // Public Beta 1.42 Build: 7503285
-                m.WriteMemory("eurotrucks2.exe+01965D38,195C", "int", EXPAmount.Text);
+                // m.WriteMemory("eurotrucks2.exe+01965D38,195C", "int", EXPAmount.Text);
+
+                // Game Version 1.44.1.10s Build: 8879813
+                m.WriteMemory("eurotrucks2.exe+01AEA4B8,195C", "int", EXPAmount.Text);
+                EXPAmount.Text = "";
             }
         }
 
+        // Bypass Garage Upgrade Check Button
         private void rgch_CheckedChanged(object sender, EventArgs e)
         {
             if (rgch.Checked)
             {
-                m.WriteMemory("eurotrucks2.exe+A2C5A8", "bytes", "83 79 10 00");
+                m.WriteMemory("eurotrucks2.exe+8315F8", "bytes", "83 79 10 00");
             } 
             else
             {
-                m.WriteMemory("eurotrucks2.exe+A2C5A8", "bytes", "48 39 41 10");
+                m.WriteMemory("eurotrucks2.exe+8315F8", "bytes", "48 39 41 10");
             }
         }
 
+        // Reverse Money Button
         private void rmd_CheckedChanged(object sender, EventArgs e)
         {
-            // UIntPtr allocMemAddress;
-
             if (rmd.Checked)
             {
 
-                m.WriteMemory("eurotrucks2.exe+6AB3BE", "bytes", "48 01 D8");
-
-                // byte[] asm = new byte[4096];
-                // byte[] data = { 0x48, 0x01, 0xD8, 0x80, 0x79, 0x64, 0x00, 0xE9, 0x29, 0x78, 0x6C };
-                // asm = data;
-                // allocMemAddress = m.CreateCodeCave("eurotrucks2.exe+0x6B782E", asm, 11);
+                m.WriteMemory("eurotrucks2.exe+58485E", "bytes", "48 01 D8");
             }
             else
             {
-                m.WriteMemory("eurotrucks2.exe+6AB3BE", "bytes", "48 29 C3");
+                m.WriteMemory("eurotrucks2.exe+58485E", "bytes", "48 29 C3");
+            }
+        }
+
+        // Bypass Garage Buy Check
+        private void gbch_CheckedChanged(object sender, EventArgs e)
+        {
+            if (gbch.Checked)
+            {
+                m.WriteMemory("eurotrucks2.exe+786A50", "bytes", "83 7A 10 00");
+            } 
+            else
+            {
+                m.WriteMemory("eurotrucks2.exe+786A50", "bytes", "48 39 4A 10");
             }
         }
     }
