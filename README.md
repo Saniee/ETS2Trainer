@@ -19,4 +19,4 @@ Bypass Garage Upgrade Money Check - Removes the need of having the money to upgr
 Bypass Garage Buy Money Check - Removes the need of having the money to buy a garage. Best paired with Reverse Money Deduction. <br />
 Reverse Money Deduction - this reverse every deduction of money from your account and makes it so instead of removing the balance it adds it.<br />
 
-![ets2trainer](https://i.imgur.com/cd34k2f.png)
+![ets2trainer](https://i.imgur.com/QGVnYkA.png)
