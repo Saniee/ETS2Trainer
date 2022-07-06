@@ -1,7 +1,6 @@
 ![GitHub release (latest by date)](https://img.shields.io/github/downloads/Saniee/ETS2Trainer/latest/total)
 
-# ETS2 Trainer
-# The Trainer needs a Admin privilages!
+# ETS2 Trainer (The Trainer needs a Admin privilages, so it can do its job!)
 
 Best used for editing your profile for more money and exp so you dont have to grind.
 
