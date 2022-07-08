@@ -1,6 +1,6 @@
 ![GitHub release (latest by date)](https://img.shields.io/github/downloads/Saniee/ETS2Trainer/latest/total)
 
-# ETS2 Trainer (The Trainer needs a Admin privilages, so it can do its job!)
+# ETS2 Trainer (Every Trainer/Cheat Requires Admin permissions to edit memory. This one is no Exception!)
 
 Best used for editing your profile for more money and exp so you dont have to grind.
 
