@@ -1,5 +1,7 @@
 ![GitHub release (latest by date)](https://img.shields.io/github/downloads/Saniee/ETS2Trainer/latest/total)
 
+# Not Maintaned anymore. I have lost interest in the game.
+
 # ETS2 Trainer (Every Trainer/Cheat Requires Admin permissions to edit memory. This one is no Exception!)
 
 Best used for editing your profile for more money and exp so you dont have to grind.
