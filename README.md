@@ -11,7 +11,7 @@ The values in it are rather vague, but it should be enough to get around how muc
 - Profile Editing > Want to quickly edit your save to your needs?
 	- Set Money
 	- Set EXP
-- Accelerated Progression > Don't want to cheat? Want to speed up the progress? Use these!
+- Accelerated Progression > Don't want to cheat? Want to speed up the progress? Use these! **!!! Upon further testing, do not set this to absurd values. It bricks the money/exp values !!!**
 	- Money Multiplier
 	- EXP Multiplier
 - Misc. Features > In here for Fun!
