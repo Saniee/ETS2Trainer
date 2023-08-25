@@ -1,8 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <CheatTable CheatEngineTableVersion="45">
-  <Forms>
-    <CETrainer Class="TTrainerForm" Encoding="Ascii85">=N-fh,eQ#xk*inKRB4@0ITbz[txrbMQ,uQ,DikVPgh*3_4?FnxNFuc23gpVN@D2Ix0zKtk6n:-EbLw*JqJC?#:%uHgxVy76][0TZGd#8sih{OzgDA;znnB+B]P[89YWJiMW2W{CrVr[4%GAG,8qtM%)a[$d37e_FHl8^$ORvDC8OtfrZKplBh{suXG(r}0G+2M!#WXAIgHamZ6b$BPkS)oIdX^GCJpBNux*rh.0:h9O!Ze%km5UcFrCIa9i@A]ZDmVu(Ng-o37,dbwSTvUsnm.*^K1NoT13DFZU60ATY05w!WG/lv:$80!-FRjMv]EW]@e,{PjB_j?/rX1thA{3P7_4!XFI/q6?k2B80(nO/gP^nFlI,GsK^70ghLFM40-OP^yvu0l1kSnFmrCdnr9@W]I=41VCgnY:4Oc+V8FyPZM@{Bif+cZgI#^xu*6d04NsI]O24#$u25NCw=y[KX-d-_Bv,aCIcuECNITWe;YYp!:E1c3+ki$5:HcSC@(fm{thGoR8PL5YHnP!z#nUCAsTVz#P/^4KSwtQPkPfkwIOL@e*cS-p,BvR*4K59u;hps9G!!VFJq^{SfOu1C7di]FpZ0TExBr{Y,IbD?JFk0Ol(!Gr70N]v*lvmHCRfm%hm,21_0EzksdRnS;X{m0k5HrITOGqT^XJY4)bivspsAb2b23?7kz?$yN=YZGB87(pfn#]IrqDv-t$hoImVk;!A:LqS188W(sC5d]-JOQnD:DhWG6Quqr]J:28v.iQ}uZJuL7Eie$WJR3ZlyGR+mg^;=BnbJ@$;J(HSxKNYeY(pVEzTb9T]3p3iHlr1]C:pHSZV^;V8wa,@,q?;5${ng=}C[rzuL(/L9K7Q^Xyt$v$n3pyPcv@KcTODnt!OA$N6c%qpALmbZNV:H9X[?n_M}5)eX=mG4M;jxZ9nYqvD*quv:_,yItrL,N4qu3GCw$5ZfO[KY8![PJ7*3taY8W1YoPm./q)fnm%PSxUmDAbL*a^2HIGB+6}7j+bAcG.C#z$@03*(HfFu=m^WVtY=Jc?Fl!2KyjCMTQ5p}8JgEZv5$SHJan2cQMsUqyQ4nTKIxxmd!b}qo+-Cbx%9W/l^n73}5$CDIau?/TVpBLe/6+ry]WcfYSn?6rt,KUsTb%r2ig_.1i!fT%lFQ]dT1/w#MV5U@8Zj+(7bOl)d(A}y4mqBU[-4:JH@O7)L64pL9yk7l$3N[N^N;tX=:tvr^k]A%w}FY_MzHA;k2V6=^U0w?S=n,F$?i+V^%U,gyW^6;J${CXfBbxY^L}$-;SdcA[Rt]bKSK2(,WH{=yO,8)h_oU</CETrainer>
-  </Forms>
   <CheatEntries>
     <CheatEntry>
       <ID>42</ID>
@@ -449,7 +446,7 @@ eurotrucks2.exe+510CC6: 48 89 69 68              - mov [rcx+68],rbp
           <CheatEntries>
             <CheatEntry>
               <ID>44</ID>
-              <Description>"Setting"</Description>
+              <Description>"Config"</Description>
               <DropDownList ReadOnly="1" DisplayValueAsItem="1">0: No Money Removed
 1: Add Money Instead!
 </DropDownList>

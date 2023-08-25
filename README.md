@@ -1,23 +1,19 @@
-![GitHub release (latest by date)](https://img.shields.io/github/downloads/Saniee/ETS2Trainer/latest/total)
+# [Latest Release](https://github.com/Saniee/ETS2Trainer/blob/main/eurotrucks2.CT)
 
-# Not Maintaned anymore. I have lost interest in the game.
+### ETS2 Cheat Table
+[Demo Video](https://youtu.be/3i87q3BSXZc)
+<br />
+[Wiki Link For Levels](https://truck-simulator.fandom.com/wiki/Euro_Truck_Simulator_2_Levels)
+<br />
+The values in it are rather vague, but it should be enough to get around how much EXP you might want.
 
-# ETS2 Trainer (Every Trainer/Cheat Requires Admin permissions to edit memory. This one is no Exception!)
-
-Best used for editing your profile for more money and exp so you dont have to grind.
-
-# Tag for releases: 
-If it has 'B' on the end of game version it means its a beta version of the game. <br />
-If it has 'R' on the end of game version it means its the latest stable version of the game. <br />
-If it has 'E' on the end of game version it means its the experimental version of the game.
-
-Releases on the unstable branches like beta/experimental will be published as .rar since its easier to build and debug.
-
-# Hacks that are in Releases
-SetMoney - Self Explanatory (You need to use the default currency) <br />
-SetEXP - Self Explanatory <br />
-Bypass Garage Upgrade Money Check - Removes the need of having the money to upgrade a garage. Best paired with Reverse Money Deduction. <br />
-Bypass Garage Buy Money Check - Removes the need of having the money to buy a garage. Best paired with Reverse Money Deduction. <br />
-Reverse Money Deduction - this reverse every deduction of money from your account and makes it so instead of removing the balance it adds it.<br />
-
-![ets2trainer](https://i.imgur.com/QGVnYkA.png)
+### Current Features
+- Profile Editing > Want to quickly edit your save to your needs?
+	- Set Money
+	- Set EXP
+- Accelerated Progression > Don't want to cheat? Want to speed up the progress? Use these!
+	- Money Multiplier
+	- EXP Multiplier
+- Misc. Features > In here for Fun!
+	- Remove Garage Buy Check : Bypass the need to have enough money to buy a garage upgrade. Works best with the Reverse Money Mod
+	- Reverse Money Mod
