@@ -1,5 +1,7 @@
 ![GitHub release (latest by date)](https://img.shields.io/github/downloads/Saniee/ETS2Trainer/latest/total)
 
+# Not Maintaned anymore. I have lost interest in the game.
+
 # ETS2 Trainer (Every Trainer/Cheat Requires Admin permissions to edit memory. This one is no Exception!)
 
 Best used for editing your profile for more money and exp so you dont have to grind.
@@ -13,7 +15,7 @@ Releases on the unstable branches like beta/experimental will be published as .r
 
 # Hacks that are in Releases
 SetMoney - Self Explanatory (You need to use the default currency) <br />
-SetEXP - Sefl Explanatory <br />
+SetEXP - Self Explanatory <br />
 Bypass Garage Upgrade Money Check - Removes the need of having the money to upgrade a garage. Best paired with Reverse Money Deduction. <br />
 Bypass Garage Buy Money Check - Removes the need of having the money to buy a garage. Best paired with Reverse Money Deduction. <br />
 Reverse Money Deduction - this reverse every deduction of money from your account and makes it so instead of removing the balance it adds it.<br />
