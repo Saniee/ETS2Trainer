@@ -1,0 +1,551 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CheatTable CheatEngineTableVersion="45">
+  <Forms>
+    <CETrainer Class="TTrainerForm" Encoding="Ascii85">=N-fh,eQ#xk*inKRB4@0ITbz[txrbMQ,uQ,DikVPgh*3_4?FnxNFuc23gpVN@D2Ix0zKtk6n:-EbLw*JqJC?#:%uHgxVy76][0TZGd#8sih{OzgDA;znnB+B]P[89YWJiMW2W{CrVr[4%GAG,8qtM%)a[$d37e_FHl8^$ORvDC8OtfrZKplBh{suXG(r}0G+2M!#WXAIgHamZ6b$BPkS)oIdX^GCJpBNux*rh.0:h9O!Ze%km5UcFrCIa9i@A]ZDmVu(Ng-o37,dbwSTvUsnm.*^K1NoT13DFZU60ATY05w!WG/lv:$80!-FRjMv]EW]@e,{PjB_j?/rX1thA{3P7_4!XFI/q6?k2B80(nO/gP^nFlI,GsK^70ghLFM40-OP^yvu0l1kSnFmrCdnr9@W]I=41VCgnY:4Oc+V8FyPZM@{Bif+cZgI#^xu*6d04NsI]O24#$u25NCw=y[KX-d-_Bv,aCIcuECNITWe;YYp!:E1c3+ki$5:HcSC@(fm{thGoR8PL5YHnP!z#nUCAsTVz#P/^4KSwtQPkPfkwIOL@e*cS-p,BvR*4K59u;hps9G!!VFJq^{SfOu1C7di]FpZ0TExBr{Y,IbD?JFk0Ol(!Gr70N]v*lvmHCRfm%hm,21_0EzksdRnS;X{m0k5HrITOGqT^XJY4)bivspsAb2b23?7kz?$yN=YZGB87(pfn#]IrqDv-t$hoImVk;!A:LqS188W(sC5d]-JOQnD:DhWG6Quqr]J:28v.iQ}uZJuL7Eie$WJR3ZlyGR+mg^;=BnbJ@$;J(HSxKNYeY(pVEzTb9T]3p3iHlr1]C:pHSZV^;V8wa,@,q?;5${ng=}C[rzuL(/L9K7Q^Xyt$v$n3pyPcv@KcTODnt!OA$N6c%qpALmbZNV:H9X[?n_M}5)eX=mG4M;jxZ9nYqvD*quv:_,yItrL,N4qu3GCw$5ZfO[KY8![PJ7*3taY8W1YoPm./q)fnm%PSxUmDAbL*a^2HIGB+6}7j+bAcG.C#z$@03*(HfFu=m^WVtY=Jc?Fl!2KyjCMTQ5p}8JgEZv5$SHJan2cQMsUqyQ4nTKIxxmd!b}qo+-Cbx%9W/l^n73}5$CDIau?/TVpBLe/6+ry]WcfYSn?6rt,KUsTb%r2ig_.1i!fT%lFQ]dT1/w#MV5U@8Zj+(7bOl)d(A}y4mqBU[-4:JH@O7)L64pL9yk7l$3N[N^N;tX=:tvr^k]A%w}FY_MzHA;k2V6=^U0w?S=n,F$?i+V^%U,gyW^6;J${CXfBbxY^L}$-;SdcA[Rt]bKSK2(,WH{=yO,8)h_oU</CETrainer>
+  </Forms>
+  <CheatEntries>
+    <CheatEntry>
+      <ID>42</ID>
+      <Description>"Raw Values | Profile Editing"</Description>
+      <Options moManualExpandCollapse="1"/>
+      <Color>00FF00</Color>
+      <GroupHeader>1</GroupHeader>
+      <CheatEntries>
+        <CheatEntry>
+          <ID>33</ID>
+          <Description>"Money"</Description>
+          <Color>00FF00</Color>
+          <VariableType>4 Bytes</VariableType>
+          <Address>"eurotrucks2.exe"+01C5AD68</Address>
+          <Offsets>
+            <Offset>10</Offset>
+            <Offset>10</Offset>
+          </Offsets>
+          <Hotkeys>
+            <Hotkey>
+              <Action>Set Value</Action>
+              <Keys>
+                <Key>120</Key>
+              </Keys>
+              <Description>Set the Money Value</Description>
+              <ID>0</ID>
+              <ActivateSound TTS="EN">{MRDescription} Set</ActivateSound>
+            </Hotkey>
+          </Hotkeys>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>35</ID>
+          <Description>"EXP"</Description>
+          <Color>00FF00</Color>
+          <VariableType>4 Bytes</VariableType>
+          <Address>"eurotrucks2.exe"+01B8AFE0</Address>
+          <Offsets>
+            <Offset>1964</Offset>
+            <Offset>20</Offset>
+            <Offset>8</Offset>
+            <Offset>28</Offset>
+            <Offset>0</Offset>
+            <Offset>10</Offset>
+            <Offset>20</Offset>
+          </Offsets>
+          <Hotkeys>
+            <Hotkey>
+              <Action>Set Value</Action>
+              <Keys>
+                <Key>119</Key>
+              </Keys>
+              <Description>Set the EXP Value</Description>
+              <ID>0</ID>
+              <ActivateSound TTS="EN">{MRDescription} Set</ActivateSound>
+            </Hotkey>
+          </Hotkeys>
+        </CheatEntry>
+      </CheatEntries>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>41</ID>
+      <Description>"Money/EXP Multipliers | Accelerated Progression"</Description>
+      <Options moManualExpandCollapse="1"/>
+      <Color>0080FF</Color>
+      <GroupHeader>1</GroupHeader>
+      <CheatEntries>
+        <CheatEntry>
+          <ID>36</ID>
+          <Description>"Money Multiplier"</Description>
+          <Options moHideChildren="1"/>
+          <Color>0080FF</Color>
+          <VariableType>Auto Assembler Script</VariableType>
+          <AssemblerScript>{ Game   : eurotrucks2.exe
+  Version: 
+  Date   : 2023-08-25
+  Author : Saniee
+
+  This script Multiplies the Money Earned
+}
+
+[ENABLE]
+aobscanmodule(moneyChange,eurotrucks2.exe,48 89 41 10 0F 85 C5 00 00 00) // should be unique
+alloc(newmem,$1000,moneyChange)
+alloc(moneyMultiplier,4,moneyChange)
+
+label(code)
+label(return)
+
+moneyMultiplier:
+dd #1
+
+registersymbol(moneyMultiplier)
+
+newmem:
+  imul rax,[moneyMultiplier]
+
+code:
+  mov [rcx+10],rax
+  jne eurotrucks2.exe+510D6D
+  jmp return
+
+moneyChange:
+  jmp newmem
+  nop 5
+return:
+registersymbol(moneyChange)
+
+[DISABLE]
+moneyChange:
+  db 48 89 41 10 0F 85 C5 00 00 00
+
+unregistersymbol(*)
+dealloc(*)
+
+{
+// ORIGINAL CODE - INJECTION POINT: eurotrucks2.exe+510C9E
+
+eurotrucks2.exe+510C78: E8 B3 44 BC FF           - call eurotrucks2.exe+D5130
+eurotrucks2.exe+510C7D: 48 F7 DB                 - neg rbx
+eurotrucks2.exe+510C80: 45 33 C0                 - xor r8d,r8d
+eurotrucks2.exe+510C83: 48 8B D3                 - mov rdx,rbx
+eurotrucks2.exe+510C86: 48 8B CF                 - mov rcx,rdi
+eurotrucks2.exe+510C89: E8 72 FE FF FF           - call eurotrucks2.exe+510B00
+eurotrucks2.exe+510C8E: E9 F7 00 00 00           - jmp eurotrucks2.exe+510D8A
+eurotrucks2.exe+510C93: 48 8B 41 10              - mov rax,[rcx+10]
+eurotrucks2.exe+510C97: 48 2B C3                 - sub rax,rbx
+eurotrucks2.exe+510C9A: 80 79 64 00              - cmp byte ptr [rcx+64],00
+// ---------- INJECTING HERE ----------
+eurotrucks2.exe+510C9E: 48 89 41 10              - mov [rcx+10],rax
+// ---------- DONE INJECTING  ----------
+eurotrucks2.exe+510CA2: 0F 85 C5 00 00 00        - jne eurotrucks2.exe+510D6D
+eurotrucks2.exe+510CA8: 48 85 C0                 - test rax,rax
+eurotrucks2.exe+510CAB: 0F 89 BC 00 00 00        - jns eurotrucks2.exe+510D6D
+eurotrucks2.exe+510CB1: 48 8B 05 B0 A0 74 01     - mov rax,[eurotrucks2.exe+1C5AD68]
+eurotrucks2.exe+510CB8: C6 41 64 01              - mov byte ptr [rcx+64],01
+eurotrucks2.exe+510CBC: 48 89 AC 24 B0 00 00 00  - mov [rsp+000000B0],rbp
+eurotrucks2.exe+510CC4: 33 ED                    - xor ebp,ebp
+eurotrucks2.exe+510CC6: 48 89 69 68              - mov [rcx+68],rbp
+eurotrucks2.exe+510CCA: 48 8D 0D 99 13 FC 00     - lea rcx,[eurotrucks2.exe+14D206A]
+eurotrucks2.exe+510CD1: 48 8B B8 28 01 00 00     - mov rdi,[rax+00000128]
+}
+</AssemblerScript>
+          <CheatEntries>
+            <CheatEntry>
+              <ID>37</ID>
+              <Description>"Multiplier"</Description>
+              <DropDownList>1: Normal
+2: 2x Money
+4: 4x Money
+5: 5x Money
+10: 10x Money
+50: 50x Money
+100: 100x Money
+</DropDownList>
+              <ShowAsSigned>0</ShowAsSigned>
+              <Color>FFFF00</Color>
+              <VariableType>4 Bytes</VariableType>
+              <Address>moneyMultiplier</Address>
+            </CheatEntry>
+          </CheatEntries>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>38</ID>
+          <Description>"Exp Multiplier"</Description>
+          <Options moHideChildren="1"/>
+          <Color>0080FF</Color>
+          <VariableType>Auto Assembler Script</VariableType>
+          <AssemblerScript>{ Game   : eurotrucks2.exe
+  Version: 
+  Date   : 2023-08-25
+  Author : Saniee
+
+  This script
+}
+
+[ENABLE]
+aobscanmodule(expChange,eurotrucks2.exe,89 BE 64 19 00 00) // should be unique
+alloc(newmem,$1000,expChange)
+alloc(expMultiplier,4,expChange)
+
+label(code)
+label(return)
+
+expMultiplier:
+dd #1
+
+registersymbol(expMultiplier)
+
+newmem:
+  imul edi,[expMultiplier]
+
+code:
+  mov [rsi+00001964],edi
+  jmp return
+
+expChange:
+  jmp newmem
+  nop
+
+return:
+registersymbol(expChange)
+
+[DISABLE]
+expChange:
+  db 89 BE 64 19 00 00
+
+unregistersymbol(*)
+dealloc(*)
+
+{
+// ORIGINAL CODE - INJECTION POINT: eurotrucks2.exe+2723C6
+
+eurotrucks2.exe+27239A: 57                    - push rdi
+eurotrucks2.exe+27239B: 48 83 EC 20           - sub rsp,20
+eurotrucks2.exe+27239F: 48 8B 81 10 01 00 00  - mov rax,[rcx+00000110]
+eurotrucks2.exe+2723A6: 8B FA                 - mov edi,edx
+eurotrucks2.exe+2723A8: 8B 91 64 19 00 00     - mov edx,[rcx+00001964]
+eurotrucks2.exe+2723AE: 48 8B F1              - mov rsi,rcx
+eurotrucks2.exe+2723B1: 48 8B 88 20 01 00 00  - mov rcx,[rax+00000120]
+eurotrucks2.exe+2723B8: E8 03 E8 2A 00        - call eurotrucks2.exe+520BC0
+eurotrucks2.exe+2723BD: 4C 8B 86 10 01 00 00  - mov r8,[rsi+00000110]
+eurotrucks2.exe+2723C4: 8B D7                 - mov edx,edi
+// ---------- INJECTING HERE ----------
+eurotrucks2.exe+2723C6: 89 BE 64 19 00 00     - mov [rsi+00001964],edi
+// ---------- DONE INJECTING  ----------
+eurotrucks2.exe+2723CC: 8B D8                 - mov ebx,eax
+eurotrucks2.exe+2723CE: 49 8B 88 20 01 00 00  - mov rcx,[r8+00000120]
+eurotrucks2.exe+2723D5: E8 E6 E7 2A 00        - call eurotrucks2.exe+520BC0
+eurotrucks2.exe+2723DA: 3B D8                 - cmp ebx,eax
+eurotrucks2.exe+2723DC: 74 0A                 - je eurotrucks2.exe+2723E8
+eurotrucks2.exe+2723DE: 8B D0                 - mov edx,eax
+eurotrucks2.exe+2723E0: 48 8B CE              - mov rcx,rsi
+eurotrucks2.exe+2723E3: E8 18 00 00 00        - call eurotrucks2.exe+272400
+eurotrucks2.exe+2723E8: 48 8B 5C 24 30        - mov rbx,[rsp+30]
+eurotrucks2.exe+2723ED: 48 8B 74 24 38        - mov rsi,[rsp+38]
+}
+</AssemblerScript>
+          <CheatEntries>
+            <CheatEntry>
+              <ID>39</ID>
+              <Description>"Multiplier"</Description>
+              <DropDownList>1: Normal
+2: 2x EXP
+4: 4x EXP
+5: 5x EXP
+10: 10x EXP
+50: 50x EXP
+100: 100x EXP
+</DropDownList>
+              <ShowAsSigned>0</ShowAsSigned>
+              <Color>FFFF00</Color>
+              <VariableType>4 Bytes</VariableType>
+              <Address>expMultiplier</Address>
+            </CheatEntry>
+          </CheatEntries>
+        </CheatEntry>
+      </CheatEntries>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>45</ID>
+      <Description>"Misc. Functions"</Description>
+      <Options moManualExpandCollapse="1"/>
+      <Color>80FFFF</Color>
+      <GroupHeader>1</GroupHeader>
+      <CheatEntries>
+        <CheatEntry>
+          <ID>40</ID>
+          <Description>"Disable Money check for Garage Upgrades"</Description>
+          <Options moHideChildren="1"/>
+          <Color>80FFFF</Color>
+          <VariableType>Auto Assembler Script</VariableType>
+          <AssemblerScript>{ Game   : eurotrucks2.exe
+  Version: 
+  Date   : 2023-08-25
+  Author : Saniee
+
+  This script does blah blah blah
+}
+
+[ENABLE]
+//code from here to '[DISABLE]' will be used to enable the cheat
+
+ 
+ 
+aobscanmodule(moneyCheckGarage,eurotrucks2.exe,48 39 41 10 48 8D 4D A7) // should be unique
+alloc(newmem,$1000,moneyCheckGarage)
+
+label(code)
+label(return)
+
+newmem:
+  mov rax,#0
+
+code:
+  cmp [rcx+10],rax
+  lea rcx,[rbp-59]
+  jmp return
+
+moneyCheckGarage:
+  jmp newmem
+  nop 3
+return:
+registersymbol(moneyCheckGarage)
+
+[DISABLE]
+//code from here till the end of the code will be used to disable the cheat
+moneyCheckGarage:
+  db 48 39 41 10 48 8D 4D A7
+
+unregistersymbol(moneyCheckGarage)
+dealloc(newmem)
+
+{
+// ORIGINAL CODE - INJECTION POINT: eurotrucks2.exe+804428
+
+eurotrucks2.exe+8043F8: E8 E3 7D D1 FF        - call eurotrucks2.exe+51C1E0
+eurotrucks2.exe+8043FD: 4C 8D 25 A4 04 2D 01  - lea r12,[eurotrucks2.exe+1AD48A8]
+eurotrucks2.exe+804404: 48 8B D0              - mov rdx,rax
+eurotrucks2.exe+804407: 48 8D 4D 0F           - lea rcx,[rbp+0F]
+eurotrucks2.exe+80440B: 4C 89 64 24 20        - mov [rsp+20],r12
+eurotrucks2.exe+804410: 45 33 C0              - xor r8d,r8d
+eurotrucks2.exe+804413: E8 48 C8 C8 FF        - call eurotrucks2.exe+490C60
+eurotrucks2.exe+804418: 48 8B 8E 90 01 00 00  - mov rcx,[rsi+00000190]
+eurotrucks2.exe+80441F: E8 BC 7D D1 FF        - call eurotrucks2.exe+51C1E0
+eurotrucks2.exe+804424: 48 8B 4B 10           - mov rcx,[rbx+10]
+// ---------- INJECTING HERE ----------
+eurotrucks2.exe+804428: 48 39 41 10           - cmp [rcx+10],rax
+// ---------- DONE INJECTING  ----------
+eurotrucks2.exe+80442C: 48 8D 4D A7           - lea rcx,[rbp-59]
+eurotrucks2.exe+804430: 0F 8C 29 02 00 00     - jl eurotrucks2.exe+80465F
+eurotrucks2.exe+804436: 48 8D 05 FB 05 F9 00  - lea rax,[eurotrucks2.exe+1794A38]
+eurotrucks2.exe+80443D: 48 89 45 A7           - mov [rbp-59],rax
+eurotrucks2.exe+804441: E8 BA 9D 66 00        - call eurotrucks2.exe+E6E200
+eurotrucks2.exe+804446: 4C 89 7D FF           - mov [rbp-01],r15
+eurotrucks2.exe+80444A: 4C 8D 77 FF           - lea r14,[rdi-01]
+eurotrucks2.exe+80444E: 48 89 7D 07           - mov [rbp+07],rdi
+eurotrucks2.exe+804452: 4C 89 6D F7           - mov [rbp-09],r13
+eurotrucks2.exe+804456: 48 8B 00              - mov rax,[rax]
+}
+</AssemblerScript>
+          <CheatEntries>
+            <CheatEntry>
+              <ID>46</ID>
+              <Description>"I recommend also turning on the Reverse Money Mod"</Description>
+              <Color>0000FF</Color>
+              <GroupHeader>1</GroupHeader>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>47</ID>
+              <Description>"Without it set to reverse, it can get you to a negative value"</Description>
+              <Color>0000FF</Color>
+              <GroupHeader>1</GroupHeader>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>48</ID>
+              <Description>"Which cannot be set back to positive"</Description>
+              <Color>0000FF</Color>
+              <GroupHeader>1</GroupHeader>
+            </CheatEntry>
+          </CheatEntries>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>43</ID>
+          <Description>"Reverse Money Mod"</Description>
+          <Options moHideChildren="1"/>
+          <Color>80FFFF</Color>
+          <VariableType>Auto Assembler Script</VariableType>
+          <AssemblerScript>{ Game   : eurotrucks2.exe
+  Version: 
+  Date   : 2023-08-25
+  Author : Saniee
+
+  This script does blah blah blah
+}
+
+[ENABLE]
+//code from here to '[DISABLE]' will be used to enable the cheat
+aobscanmodule(reverseMoneyMod,eurotrucks2.exe,48 2B C3 80 79 64 00) // should be unique
+alloc(newmem,$1000,reverseMoneyMod)
+alloc(reverseMoneyModValue,4,reverseMoneyMod)
+
+label(code)
+label(return)
+
+reverseMoneyModValue:
+dd #0
+
+registersymbol(reverseMoneyModValue)
+
+newmem:
+  cmp [reverseMoneyModValue],1
+  jne return
+  add rax,rbx
+  cmp byte ptr [rcx+64],00
+  jmp return
+
+code:
+  sub rax,#0
+  cmp byte ptr [rcx+64],00
+  jmp return
+
+reverseMoneyMod:
+  jmp newmem
+  nop 2
+
+return:
+registersymbol(reverseMoneyMod)
+
+[DISABLE]
+reverseMoneyMod:
+  db 48 2B C3 80 79 64 00
+
+unregistersymbol(*)
+dealloc(*)
+
+{
+// ORIGINAL CODE - INJECTION POINT: eurotrucks2.exe+510C97
+
+eurotrucks2.exe+510C6F: 79 22                    - jns eurotrucks2.exe+510C93
+eurotrucks2.exe+510C71: 48 8D 0D 38 7C 23 01     - lea rcx,[eurotrucks2.exe+17488B0]
+eurotrucks2.exe+510C78: E8 B3 44 BC FF           - call eurotrucks2.exe+D5130
+eurotrucks2.exe+510C7D: 48 F7 DB                 - neg rbx
+eurotrucks2.exe+510C80: 45 33 C0                 - xor r8d,r8d
+eurotrucks2.exe+510C83: 48 8B D3                 - mov rdx,rbx
+eurotrucks2.exe+510C86: 48 8B CF                 - mov rcx,rdi
+eurotrucks2.exe+510C89: E8 72 FE FF FF           - call eurotrucks2.exe+510B00
+eurotrucks2.exe+510C8E: E9 F7 00 00 00           - jmp eurotrucks2.exe+510D8A
+eurotrucks2.exe+510C93: 48 8B 41 10              - mov rax,[rcx+10]
+// ---------- INJECTING HERE ----------
+eurotrucks2.exe+510C97: 48 2B C3                 - sub rax,rbx
+// ---------- DONE INJECTING  ----------
+eurotrucks2.exe+510C9A: 80 79 64 00              - cmp byte ptr [rcx+64],00
+eurotrucks2.exe+510C9E: 48 89 41 10              - mov [rcx+10],rax
+eurotrucks2.exe+510CA2: 0F 85 C5 00 00 00        - jne eurotrucks2.exe+510D6D
+eurotrucks2.exe+510CA8: 48 85 C0                 - test rax,rax
+eurotrucks2.exe+510CAB: 0F 89 BC 00 00 00        - jns eurotrucks2.exe+510D6D
+eurotrucks2.exe+510CB1: 48 8B 05 B0 A0 74 01     - mov rax,[eurotrucks2.exe+1C5AD68]
+eurotrucks2.exe+510CB8: C6 41 64 01              - mov byte ptr [rcx+64],01
+eurotrucks2.exe+510CBC: 48 89 AC 24 B0 00 00 00  - mov [rsp+000000B0],rbp
+eurotrucks2.exe+510CC4: 33 ED                    - xor ebp,ebp
+eurotrucks2.exe+510CC6: 48 89 69 68              - mov [rcx+68],rbp
+}
+</AssemblerScript>
+          <CheatEntries>
+            <CheatEntry>
+              <ID>44</ID>
+              <Description>"Setting"</Description>
+              <DropDownList ReadOnly="1" DisplayValueAsItem="1">0: No Money Removed
+1: Add Money Instead!
+</DropDownList>
+              <ShowAsSigned>0</ShowAsSigned>
+              <Color>FFFF00</Color>
+              <VariableType>4 Bytes</VariableType>
+              <Address>reverseMoneyModValue</Address>
+            </CheatEntry>
+          </CheatEntries>
+        </CheatEntry>
+      </CheatEntries>
+    </CheatEntry>
+  </CheatEntries>
+  <UserdefinedSymbols>
+    <SymbolEntry>
+      <Name>newmem</Name>
+      <Address>FFFF0000</Address>
+    </SymbolEntry>
+  </UserdefinedSymbols>
+  <LuaScript>--TRAINERGENERATORSTART--
+--This is autogenerated code. Changing code in this block will
+--get erased and rewritten if you regenerate the trainer code
+
+--Uncomment the following line if this is a Cheat Table format trainer and you don't want CE to show (Tip, save as .CETRAINER alternatively)
+--hideAllCEWindows()
+
+RequiredCEVersion=7,5
+if (getCEVersion==nil) or (getCEVersion()&lt;RequiredCEVersion) then
+  messageDialog('Please install Cheat Engine '..RequiredCEVersion, mtError, mbOK)
+  closeCE()
+end
+addresslist=getAddressList()
+memrec33=addresslist.getMemoryRecordByID(33)
+memrec35=addresslist.getMemoryRecordByID(35)
+
+memrec33_hotkey0=memrec33.getHotkeyByID(0)
+memrec35_hotkey0=memrec35.getHotkeyByID(0)
+
+function onHotkey0(Hotkey)
+  --Executed before the hotkey is handled
+  CETrainer.CHEAT0.setActive(true, 1500)
+  if gPlaySoundOnAction then
+    playSound(gActivateSound)
+  end
+end
+
+memrec33_hotkey0.onHotkey=onHotkey0
+function onHotkey1(Hotkey)
+  --Executed before the hotkey is handled
+  CETrainer.CHEAT1.setActive(true, 1500)
+  if gPlaySoundOnAction then
+    playSound(gActivateSound)
+  end
+end
+
+memrec35_hotkey0.onHotkey=onHotkey1
+CETrainer.SEPERATOR.Visible=false
+
+getAutoAttachList().add("eurotrucks2.exe")
+gPlaySoundOnAction=false
+CETrainer.fixDPI() --remove this if you have already taken care of DPI issues yourself
+CETrainer.show()
+function AboutClick()
+  showMessage(gAboutText)
+end
+gAboutText=[[This trainer was made by Cheat Engine
+www.cheatengine.org]]
+
+function CloseClick()
+  --called by the close button onClick event, and when closing the form
+  closeCE()
+  return caFree --onClick doesn't care, but onClose would like a result
+end
+
+--TRAINERGENERATORSTOP--
+</LuaScript>
+  <DisassemblerComments>
+    <DisassemblerComment>
+      <Address>"eurotrucks2.exe"+2723C6</Address>
+      <Comment>Set EXP Value
+</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"eurotrucks2.exe"+510C97</Address>
+      <Comment>Remove Money
+</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"eurotrucks2.exe"+510C9E</Address>
+      <Comment>Change Money Value
+</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"eurotrucks2.exe"+804428</Address>
+      <Comment>Does player have enough money to buy upgrade?
+</Comment>
+    </DisassemblerComment>
+  </DisassemblerComments>
+</CheatTable>
