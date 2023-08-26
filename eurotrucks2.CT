@@ -3,7 +3,7 @@
   <CheatEntries>
     <CheatEntry>
       <ID>42</ID>
-      <Description>"Raw Values | Profile Editing"</Description>
+      <Description>"Profile Editing"</Description>
       <Options moManualExpandCollapse="1"/>
       <Color>00FF00</Color>
       <GroupHeader>1</GroupHeader>
@@ -61,29 +61,29 @@
     </CheatEntry>
     <CheatEntry>
       <ID>41</ID>
-      <Description>"Money/EXP Multipliers | Accelerated Progression"</Description>
+      <Description>"Accelerated Progression"</Description>
       <Options moManualExpandCollapse="1"/>
-      <Color>0080FF</Color>
+      <Color>40FF00</Color>
       <GroupHeader>1</GroupHeader>
       <CheatEntries>
         <CheatEntry>
-          <ID>36</ID>
+          <ID>49</ID>
           <Description>"Money Multiplier"</Description>
           <Options moHideChildren="1"/>
-          <Color>0080FF</Color>
+          <Color>00FF00</Color>
           <VariableType>Auto Assembler Script</VariableType>
           <AssemblerScript>{ Game   : eurotrucks2.exe
   Version: 
-  Date   : 2023-08-25
+  Date   : 2023-08-26
   Author : Saniee
 
-  This script Multiplies the Money Earned
+  This script
 }
 
 [ENABLE]
-aobscanmodule(moneyChange,eurotrucks2.exe,48 89 41 10 0F 85 C5 00 00 00) // should be unique
-alloc(newmem,$1000,moneyChange)
-alloc(moneyMultiplier,4,moneyChange)
+aobscanmodule(moneyAddition,eurotrucks2.exe,48 03 CB 80 7F 64 00) // should be unique
+alloc(newmem,$1000,moneyAddition)
+alloc(moneyMultiplier,4,moneyAddition)
 
 label(code)
 label(return)
@@ -94,64 +94,63 @@ dd #1
 registersymbol(moneyMultiplier)
 
 newmem:
-  imul rax,[moneyMultiplier]
+  imul rbx,[moneyMultiplier]
 
 code:
-  mov [rcx+10],rax
-  jne eurotrucks2.exe+510D6D
+  add rcx,rbx
+  cmp byte ptr [rdi+64],00
   jmp return
 
-moneyChange:
+moneyAddition:
   jmp newmem
-  nop 5
+  nop 2
 return:
-registersymbol(moneyChange)
+registersymbol(moneyAddition)
 
 [DISABLE]
-moneyChange:
-  db 48 89 41 10 0F 85 C5 00 00 00
+moneyAddition:
+  db 48 03 CB 80 7F 64 00
 
 unregistersymbol(*)
 dealloc(*)
 
 {
-// ORIGINAL CODE - INJECTION POINT: eurotrucks2.exe+510C9E
+// ORIGINAL CODE - INJECTION POINT: eurotrucks2.exe+510B47
 
-eurotrucks2.exe+510C78: E8 B3 44 BC FF           - call eurotrucks2.exe+D5130
-eurotrucks2.exe+510C7D: 48 F7 DB                 - neg rbx
-eurotrucks2.exe+510C80: 45 33 C0                 - xor r8d,r8d
-eurotrucks2.exe+510C83: 48 8B D3                 - mov rdx,rbx
-eurotrucks2.exe+510C86: 48 8B CF                 - mov rcx,rdi
-eurotrucks2.exe+510C89: E8 72 FE FF FF           - call eurotrucks2.exe+510B00
-eurotrucks2.exe+510C8E: E9 F7 00 00 00           - jmp eurotrucks2.exe+510D8A
-eurotrucks2.exe+510C93: 48 8B 41 10              - mov rax,[rcx+10]
-eurotrucks2.exe+510C97: 48 2B C3                 - sub rax,rbx
-eurotrucks2.exe+510C9A: 80 79 64 00              - cmp byte ptr [rcx+64],00
+eurotrucks2.exe+510B1F: 79 22                    - jns eurotrucks2.exe+510B43
+eurotrucks2.exe+510B21: 48 8D 0D 58 7D 23 01     - lea rcx,[eurotrucks2.exe+1748880]
+eurotrucks2.exe+510B28: E8 03 46 BC FF           - call eurotrucks2.exe+D5130
+eurotrucks2.exe+510B2D: 48 F7 DB                 - neg rbx
+eurotrucks2.exe+510B30: 41 B0 01                 - mov r8b,01
+eurotrucks2.exe+510B33: 48 8B D3                 - mov rdx,rbx
+eurotrucks2.exe+510B36: 48 8B CF                 - mov rcx,rdi
+eurotrucks2.exe+510B39: E8 12 01 00 00           - call eurotrucks2.exe+510C50
+eurotrucks2.exe+510B3E: E9 F3 00 00 00           - jmp eurotrucks2.exe+510C36
+eurotrucks2.exe+510B43: 48 8B 49 10              - mov rcx,[rcx+10]
 // ---------- INJECTING HERE ----------
-eurotrucks2.exe+510C9E: 48 89 41 10              - mov [rcx+10],rax
+eurotrucks2.exe+510B47: 48 03 CB                 - add rcx,rbx
 // ---------- DONE INJECTING  ----------
-eurotrucks2.exe+510CA2: 0F 85 C5 00 00 00        - jne eurotrucks2.exe+510D6D
-eurotrucks2.exe+510CA8: 48 85 C0                 - test rax,rax
-eurotrucks2.exe+510CAB: 0F 89 BC 00 00 00        - jns eurotrucks2.exe+510D6D
-eurotrucks2.exe+510CB1: 48 8B 05 B0 A0 74 01     - mov rax,[eurotrucks2.exe+1C5AD68]
-eurotrucks2.exe+510CB8: C6 41 64 01              - mov byte ptr [rcx+64],01
-eurotrucks2.exe+510CBC: 48 89 AC 24 B0 00 00 00  - mov [rsp+000000B0],rbp
-eurotrucks2.exe+510CC4: 33 ED                    - xor ebp,ebp
-eurotrucks2.exe+510CC6: 48 89 69 68              - mov [rcx+68],rbp
-eurotrucks2.exe+510CCA: 48 8D 0D 99 13 FC 00     - lea rcx,[eurotrucks2.exe+14D206A]
-eurotrucks2.exe+510CD1: 48 8B B8 28 01 00 00     - mov rdi,[rax+00000128]
+eurotrucks2.exe+510B4A: 80 7F 64 00              - cmp byte ptr [rdi+64],00
+eurotrucks2.exe+510B4E: 48 89 4F 10              - mov [rdi+10],rcx
+eurotrucks2.exe+510B52: 0F 84 C1 00 00 00        - je eurotrucks2.exe+510C19
+eurotrucks2.exe+510B58: 48 85 C9                 - test rcx,rcx
+eurotrucks2.exe+510B5B: 0F 88 B8 00 00 00        - js eurotrucks2.exe+510C19
+eurotrucks2.exe+510B61: 48 8B 05 00 A2 74 01     - mov rax,[eurotrucks2.exe+1C5AD68]
+eurotrucks2.exe+510B68: 48 8D 0D FB 14 FC 00     - lea rcx,[eurotrucks2.exe+14D206A]
+eurotrucks2.exe+510B6F: C6 47 64 00              - mov byte ptr [rdi+64],00
+eurotrucks2.exe+510B73: 48 89 AC 24 B0 00 00 00  - mov [rsp+000000B0],rbp
+eurotrucks2.exe+510B7B: 33 ED                    - xor ebp,ebp
 }
 </AssemblerScript>
           <CheatEntries>
             <CheatEntry>
-              <ID>37</ID>
+              <ID>50</ID>
               <Description>"Multiplier"</Description>
-              <DropDownList>1: Normal
+              <DropDownList DescriptionOnly="1" DisplayValueAsItem="1">1: Normal
 2: 2x Money
-4: 4x Money
+3: 3x Money
 5: 5x Money
 10: 10x Money
-50: 50x Money
 100: 100x Money
 </DropDownList>
               <ShowAsSigned>0</ShowAsSigned>
@@ -162,23 +161,23 @@ eurotrucks2.exe+510CD1: 48 8B B8 28 01 00 00     - mov rdi,[rax+00000128]
           </CheatEntries>
         </CheatEntry>
         <CheatEntry>
-          <ID>38</ID>
+          <ID>51</ID>
           <Description>"Exp Multiplier"</Description>
           <Options moHideChildren="1"/>
-          <Color>0080FF</Color>
+          <Color>00FF00</Color>
           <VariableType>Auto Assembler Script</VariableType>
           <AssemblerScript>{ Game   : eurotrucks2.exe
   Version: 
-  Date   : 2023-08-25
+  Date   : 2023-08-26
   Author : Saniee
 
-  This script
+  This script does blah blah blah
 }
 
 [ENABLE]
-aobscanmodule(expChange,eurotrucks2.exe,89 BE 64 19 00 00) // should be unique
-alloc(newmem,$1000,expChange)
-alloc(expMultiplier,4,expChange)
+aobscanmodule(expAdd,eurotrucks2.exe,8B 93 64 19 00 00 03) // should be unique
+alloc(newmem,$1000,expAdd)
+alloc(expMultiplier,4,expAdd)
 
 label(code)
 label(return)
@@ -189,65 +188,73 @@ dd #1
 registersymbol(expMultiplier)
 
 newmem:
-  imul edi,[expMultiplier]
+  // This register has a value before it is overwritten
+  mov r14,eax
+
+  // Perform the unsigned mul
+  mov eax,rdi
+  mul [expMultiplier]
+  mov rdi,eax
+
+  // Set the old value to the register and null r14
+  mov eax,r14
+  mov r14,#0
 
 code:
-  mov [rsi+00001964],edi
+  mov edx,[rbx+00001964]
   jmp return
 
-expChange:
+expAdd:
   jmp newmem
   nop
-
 return:
-registersymbol(expChange)
+registersymbol(expAdd)
 
 [DISABLE]
-expChange:
-  db 89 BE 64 19 00 00
+expAdd:
+  db 8B 93 64 19 00 00
 
 unregistersymbol(*)
 dealloc(*)
 
 {
-// ORIGINAL CODE - INJECTION POINT: eurotrucks2.exe+2723C6
+// ORIGINAL CODE - INJECTION POINT: eurotrucks2.exe+73F644
 
-eurotrucks2.exe+27239A: 57                    - push rdi
-eurotrucks2.exe+27239B: 48 83 EC 20           - sub rsp,20
-eurotrucks2.exe+27239F: 48 8B 81 10 01 00 00  - mov rax,[rcx+00000110]
-eurotrucks2.exe+2723A6: 8B FA                 - mov edi,edx
-eurotrucks2.exe+2723A8: 8B 91 64 19 00 00     - mov edx,[rcx+00001964]
-eurotrucks2.exe+2723AE: 48 8B F1              - mov rsi,rcx
-eurotrucks2.exe+2723B1: 48 8B 88 20 01 00 00  - mov rcx,[rax+00000120]
-eurotrucks2.exe+2723B8: E8 03 E8 2A 00        - call eurotrucks2.exe+520BC0
-eurotrucks2.exe+2723BD: 4C 8B 86 10 01 00 00  - mov r8,[rsi+00000110]
-eurotrucks2.exe+2723C4: 8B D7                 - mov edx,edi
+eurotrucks2.exe+73F616: E8 05 0D 99 FF        - call eurotrucks2.exe+D0320
+eurotrucks2.exe+73F61B: EB 19                 - jmp eurotrucks2.exe+73F636
+eurotrucks2.exe+73F61D: 48 8B CF              - mov rcx,rdi
+eurotrucks2.exe+73F620: E8 CB A6 E6 FF        - call eurotrucks2.exe+5A9CF0
+eurotrucks2.exe+73F625: 84 C0                 - test al,al
+eurotrucks2.exe+73F627: 48 8D 0D A2 F8 03 01  - lea rcx,[eurotrucks2.exe+177EED0]
+eurotrucks2.exe+73F62E: 48 0F 45 CE           - cmovne rcx,rsi
+eurotrucks2.exe+73F632: 48 89 4D 7F           - mov [rbp+7F],rcx
+eurotrucks2.exe+73F636: 48 8B 83 10 01 00 00  - mov rax,[rbx+00000110]
+eurotrucks2.exe+73F63D: 41 8B BF 98 01 00 00  - mov edi,[r15+00000198]
 // ---------- INJECTING HERE ----------
-eurotrucks2.exe+2723C6: 89 BE 64 19 00 00     - mov [rsi+00001964],edi
+eurotrucks2.exe+73F644: 8B 93 64 19 00 00     - mov edx,[rbx+00001964]
 // ---------- DONE INJECTING  ----------
-eurotrucks2.exe+2723CC: 8B D8                 - mov ebx,eax
-eurotrucks2.exe+2723CE: 49 8B 88 20 01 00 00  - mov rcx,[r8+00000120]
-eurotrucks2.exe+2723D5: E8 E6 E7 2A 00        - call eurotrucks2.exe+520BC0
-eurotrucks2.exe+2723DA: 3B D8                 - cmp ebx,eax
-eurotrucks2.exe+2723DC: 74 0A                 - je eurotrucks2.exe+2723E8
-eurotrucks2.exe+2723DE: 8B D0                 - mov edx,eax
-eurotrucks2.exe+2723E0: 48 8B CE              - mov rcx,rsi
-eurotrucks2.exe+2723E3: E8 18 00 00 00        - call eurotrucks2.exe+272400
-eurotrucks2.exe+2723E8: 48 8B 5C 24 30        - mov rbx,[rsp+30]
-eurotrucks2.exe+2723ED: 48 8B 74 24 38        - mov rsi,[rsp+38]
+eurotrucks2.exe+73F64A: 03 FA                 - add edi,edx
+eurotrucks2.exe+73F64C: 48 8B 88 20 01 00 00  - mov rcx,[rax+00000120]
+eurotrucks2.exe+73F653: E8 68 15 DE FF        - call eurotrucks2.exe+520BC0
+eurotrucks2.exe+73F658: 48 8B 8B 10 01 00 00  - mov rcx,[rbx+00000110]
+eurotrucks2.exe+73F65F: 8B D0                 - mov edx,eax
+eurotrucks2.exe+73F661: 48 8B 89 20 01 00 00  - mov rcx,[rcx+00000120]
+eurotrucks2.exe+73F668: E8 03 1C DE FF        - call eurotrucks2.exe+521270
+eurotrucks2.exe+73F66D: 3B F8                 - cmp edi,eax
+eurotrucks2.exe+73F66F: 89 45 77              - mov [rbp+77],eax
+eurotrucks2.exe+73F672: 48 8B CB              - mov rcx,rbx
 }
 </AssemblerScript>
           <CheatEntries>
             <CheatEntry>
-              <ID>39</ID>
+              <ID>52</ID>
               <Description>"Multiplier"</Description>
-              <DropDownList>1: Normal
-2: 2x EXP
-4: 4x EXP
-5: 5x EXP
-10: 10x EXP
-50: 50x EXP
-100: 100x EXP
+              <DropDownList ReadOnly="1" DescriptionOnly="1" DisplayValueAsItem="1">1: Normal
+2: 2x Exp
+3: 3x Exp
+5: 5x Exp
+10: 10x Exp
+100: 100x Exp
 </DropDownList>
               <ShowAsSigned>0</ShowAsSigned>
               <Color>FFFF00</Color>
@@ -259,8 +266,483 @@ eurotrucks2.exe+2723ED: 48 8B 74 24 38        - mov rsi,[rsp+38]
       </CheatEntries>
     </CheatEntry>
     <CheatEntry>
+      <ID>112</ID>
+      <Description>"Truck Mods"</Description>
+      <Options moManualExpandCollapse="1"/>
+      <Color>8080FF</Color>
+      <GroupHeader>1</GroupHeader>
+      <CheatEntries>
+        <CheatEntry>
+          <ID>113</ID>
+          <Description>"Damage Values"</Description>
+          <Options moRecursiveSetValue="1" moManualExpandCollapse="1"/>
+          <DropDownList ReadOnly="1" DescriptionOnly="1" DisplayValueAsItem="1">*:Do nothing
+0:Fix Truck
+</DropDownList>
+          <Color>8080FF</Color>
+          <GroupHeader>1</GroupHeader>
+          <CheatEntries>
+            <CheatEntry>
+              <ID>107</ID>
+              <Description>"Engine"</Description>
+              <DropDownListLink>Wheels</DropDownListLink>
+              <ShowAsSigned>0</ShowAsSigned>
+              <Color>8080FF</Color>
+              <VariableType>Float</VariableType>
+              <Address>"eurotrucks2.exe"+01C5AD68</Address>
+              <Offsets>
+                <Offset>120</Offset>
+                <Offset>80</Offset>
+                <Offset>18</Offset>
+              </Offsets>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>108</ID>
+              <Description>"Transmission"</Description>
+              <DropDownListLink>Wheels</DropDownListLink>
+              <ShowAsSigned>0</ShowAsSigned>
+              <Color>8080FF</Color>
+              <VariableType>Float</VariableType>
+              <Address>"eurotrucks2.exe"+01C5AD68</Address>
+              <Offsets>
+                <Offset>124</Offset>
+                <Offset>80</Offset>
+                <Offset>18</Offset>
+              </Offsets>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>109</ID>
+              <Description>"Chassis"</Description>
+              <DropDownListLink>Wheels</DropDownListLink>
+              <ShowAsSigned>0</ShowAsSigned>
+              <Color>8080FF</Color>
+              <VariableType>Float</VariableType>
+              <Address>"eurotrucks2.exe"+01C5AD68</Address>
+              <Offsets>
+                <Offset>70</Offset>
+                <Offset>80</Offset>
+                <Offset>18</Offset>
+              </Offsets>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>110</ID>
+              <Description>"Cabin"</Description>
+              <DropDownListLink>Wheels</DropDownListLink>
+              <ShowAsSigned>0</ShowAsSigned>
+              <Color>8080FF</Color>
+              <VariableType>Float</VariableType>
+              <Address>"eurotrucks2.exe"+01C5AD68</Address>
+              <Offsets>
+                <Offset>128</Offset>
+                <Offset>80</Offset>
+                <Offset>18</Offset>
+              </Offsets>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>111</ID>
+              <Description>"Wheels"</Description>
+              <DropDownList>0: 0% Dmg
+0.1: 10% Dmg
+0.2: 20% Dmg
+0.3: 30% Dmg
+0.4: 40% Dmg
+0.5: 50% Dmg
+0.6: 60% Dmg
+0.7: 70% Dmg
+0.8: 80% Dmg
+0.9: 90% Dmg
+1: 100% Dmg
+</DropDownList>
+              <ShowAsSigned>0</ShowAsSigned>
+              <Color>8080FF</Color>
+              <VariableType>Float</VariableType>
+              <Address>"eurotrucks2.exe"+01C5AD68</Address>
+              <Offsets>
+                <Offset>F8</Offset>
+                <Offset>80</Offset>
+                <Offset>18</Offset>
+              </Offsets>
+            </CheatEntry>
+          </CheatEntries>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>119</ID>
+          <Description>"Disable Damage"</Description>
+          <Options moAlwaysHideChildren="1" moManualExpandCollapse="1" moActivateChildrenAsWell="1" moDeactivateChildrenAsWell="1"/>
+          <Color>8080FF</Color>
+          <GroupHeader>1</GroupHeader>
+          <CheatEntries>
+            <CheatEntry>
+              <ID>114</ID>
+              <Description>"Disable Engine Damage"</Description>
+              <Color>8080FF</Color>
+              <VariableType>Auto Assembler Script</VariableType>
+              <AssemblerScript>{ Game   : eurotrucks2.exe
+  Version: 
+  Date   : 2023-08-26
+  Author : Saniee
+
+  This script does blah blah blah
+}
+
+[ENABLE]
+//code from here to '[DISABLE]' will be used to enable the cheat
+
+ 
+ 
+aobscanmodule(EngineDmg,eurotrucks2.exe,F3 0F 11 99 20 01 00 00) // should be unique
+alloc(newmem,$1000,EngineDmg)
+
+label(code)
+label(return)
+
+newmem:
+
+code:
+  mov [rcx+00000120],(float)0
+  jmp return
+
+EngineDmg:
+  jmp newmem
+  nop 3
+return:
+registersymbol(EngineDmg)
+
+[DISABLE]
+//code from here till the end of the code will be used to disable the cheat
+EngineDmg:
+  db F3 0F 11 99 20 01 00 00
+
+unregistersymbol(*)
+dealloc(*)
+
+{
+// ORIGINAL CODE - INJECTION POINT: eurotrucks2.exe+2F11C5
+
+eurotrucks2.exe+2F11A3: 0F 28 D9                 - movaps xmm3,xmm1
+eurotrucks2.exe+2F11A6: F3 0F 59 58 30           - mulss xmm3,[rax+30]
+eurotrucks2.exe+2F11AB: F3 0F 58 99 20 01 00 00  - addss xmm3,[rcx+00000120]
+eurotrucks2.exe+2F11B3: 0F 2F D8                 - comiss xmm3,xmm0
+eurotrucks2.exe+2F11B6: 73 05                    - jae eurotrucks2.exe+2F11BD
+eurotrucks2.exe+2F11B8: 0F 57 DB                 - xorps xmm3,xmm3
+eurotrucks2.exe+2F11BB: EB 08                    - jmp eurotrucks2.exe+2F11C5
+eurotrucks2.exe+2F11BD: 0F 2F DA                 - comiss xmm3,xmm2
+eurotrucks2.exe+2F11C0: 76 03                    - jna eurotrucks2.exe+2F11C5
+eurotrucks2.exe+2F11C2: 0F 28 DA                 - movaps xmm3,xmm2
+// ---------- INJECTING HERE ----------
+eurotrucks2.exe+2F11C5: F3 0F 11 99 20 01 00 00  - movss [rcx+00000120],xmm3
+// ---------- DONE INJECTING  ----------
+eurotrucks2.exe+2F11CD: F3 0F 59 48 34           - mulss xmm1,[rax+34]
+eurotrucks2.exe+2F11D2: F3 0F 58 89 24 01 00 00  - addss xmm1,[rcx+00000124]
+eurotrucks2.exe+2F11DA: 0F 2F C8                 - comiss xmm1,xmm0
+eurotrucks2.exe+2F11DD: 73 05                    - jae eurotrucks2.exe+2F11E4
+eurotrucks2.exe+2F11DF: 0F 57 C9                 - xorps xmm1,xmm1
+eurotrucks2.exe+2F11E2: EB 08                    - jmp eurotrucks2.exe+2F11EC
+eurotrucks2.exe+2F11E4: 0F 2F CA                 - comiss xmm1,xmm2
+eurotrucks2.exe+2F11E7: 76 03                    - jna eurotrucks2.exe+2F11EC
+eurotrucks2.exe+2F11E9: 0F 28 CA                 - movaps xmm1,xmm2
+eurotrucks2.exe+2F11EC: F3 0F 11 89 24 01 00 00  - movss [rcx+00000124],xmm1
+}
+</AssemblerScript>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>115</ID>
+              <Description>"Disable Transmission Damage"</Description>
+              <Color>8080FF</Color>
+              <VariableType>Auto Assembler Script</VariableType>
+              <AssemblerScript>{ Game   : eurotrucks2.exe
+  Version: 
+  Date   : 2023-08-26
+  Author : Saniee
+
+  This script does blah blah blah
+}
+
+[ENABLE]
+//code from here to '[DISABLE]' will be used to enable the cheat
+
+ 
+ 
+aobscanmodule(TransmissionDmg,eurotrucks2.exe,F3 0F 11 89 24 01 00 00) // should be unique
+alloc(newmem,$1000,TransmissionDmg)
+
+label(code)
+label(return)
+
+newmem:
+
+code:
+  mov [rcx+00000124],(float)0
+  jmp return
+
+TransmissionDmg:
+  jmp newmem
+  nop 3
+return:
+registersymbol(TransmissionDmg)
+
+[DISABLE]
+//code from here till the end of the code will be used to disable the cheat
+transmissionDmg:
+  db F3 0F 11 89 24 01 00 00
+
+unregistersymbol(*)
+dealloc(*)
+
+{
+// ORIGINAL CODE - INJECTION POINT: eurotrucks2.exe+2F11EC
+
+eurotrucks2.exe+2F11C5: F3 0F 11 99 20 01 00 00  - movss [rcx+00000120],xmm3
+eurotrucks2.exe+2F11CD: F3 0F 59 48 34           - mulss xmm1,[rax+34]
+eurotrucks2.exe+2F11D2: F3 0F 58 89 24 01 00 00  - addss xmm1,[rcx+00000124]
+eurotrucks2.exe+2F11DA: 0F 2F C8                 - comiss xmm1,xmm0
+eurotrucks2.exe+2F11DD: 73 05                    - jae eurotrucks2.exe+2F11E4
+eurotrucks2.exe+2F11DF: 0F 57 C9                 - xorps xmm1,xmm1
+eurotrucks2.exe+2F11E2: EB 08                    - jmp eurotrucks2.exe+2F11EC
+eurotrucks2.exe+2F11E4: 0F 2F CA                 - comiss xmm1,xmm2
+eurotrucks2.exe+2F11E7: 76 03                    - jna eurotrucks2.exe+2F11EC
+eurotrucks2.exe+2F11E9: 0F 28 CA                 - movaps xmm1,xmm2
+// ---------- INJECTING HERE ----------
+eurotrucks2.exe+2F11EC: F3 0F 11 89 24 01 00 00  - movss [rcx+00000124],xmm1
+// ---------- DONE INJECTING  ----------
+eurotrucks2.exe+2F11F4: 0F 28 CC                 - movaps xmm1,xmm4
+eurotrucks2.exe+2F11F7: F3 0F 59 48 28           - mulss xmm1,[rax+28]
+eurotrucks2.exe+2F11FC: F3 0F 58 89 28 01 00 00  - addss xmm1,[rcx+00000128]
+eurotrucks2.exe+2F1204: 0F 2F C8                 - comiss xmm1,xmm0
+eurotrucks2.exe+2F1207: 73 05                    - jae eurotrucks2.exe+2F120E
+eurotrucks2.exe+2F1209: 0F 57 C9                 - xorps xmm1,xmm1
+eurotrucks2.exe+2F120C: EB 08                    - jmp eurotrucks2.exe+2F1216
+eurotrucks2.exe+2F120E: 0F 2F CA                 - comiss xmm1,xmm2
+eurotrucks2.exe+2F1211: 76 03                    - jna eurotrucks2.exe+2F1216
+eurotrucks2.exe+2F1213: 0F 28 CA                 - movaps xmm1,xmm2
+}
+</AssemblerScript>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>116</ID>
+              <Description>"Disable Chassis Damage"</Description>
+              <Color>8080FF</Color>
+              <VariableType>Auto Assembler Script</VariableType>
+              <AssemblerScript>{ Game   : eurotrucks2.exe
+  Version: 
+  Date   : 2023-08-26
+  Author : Saniee
+
+  This script does blah blah blah
+}
+
+[ENABLE]
+//code from here to '[DISABLE]' will be used to enable the cheat
+
+ 
+ 
+aobscanmodule(ChassisDamage,eurotrucks2.exe,F3 0F 11 41 70 F3 0F 59) // should be unique
+alloc(newmem,$1000,ChassisDamage)
+
+label(code)
+label(return)
+
+newmem:
+
+code:
+  mov [rcx+70],(float)0
+  jmp return
+
+ChassisDamage:
+  jmp newmem
+return:
+registersymbol(ChassisDamage)
+
+[DISABLE]
+//code from here till the end of the code will be used to disable the cheat
+ChassisDamage:
+  db F3 0F 11 41 70
+
+unregistersymbol(*)
+dealloc(*)
+
+{
+// ORIGINAL CODE - INJECTION POINT: eurotrucks2.exe+2F123D
+
+eurotrucks2.exe+2F1219: F3 0F 11 89 28 01 00 00           - movss [rcx+00000128],xmm1
+eurotrucks2.exe+2F1221: F3 0F 59 58 2C                    - mulss xmm3,[rax+2C]
+eurotrucks2.exe+2F1226: F3 0F 58 59 70                    - addss xmm3,[rcx+70]
+eurotrucks2.exe+2F122B: 0F 2F D8                          - comiss xmm3,xmm0
+eurotrucks2.exe+2F122E: 72 0D                             - jb eurotrucks2.exe+2F123D
+eurotrucks2.exe+2F1230: 0F 2F DA                          - comiss xmm3,xmm2
+eurotrucks2.exe+2F1233: 76 05                             - jna eurotrucks2.exe+2F123A
+eurotrucks2.exe+2F1235: 0F 28 C2                          - movaps xmm0,xmm2
+eurotrucks2.exe+2F1238: EB 03                             - jmp eurotrucks2.exe+2F123D
+eurotrucks2.exe+2F123A: 0F 28 C3                          - movaps xmm0,xmm3
+// ---------- INJECTING HERE ----------
+eurotrucks2.exe+2F123D: F3 0F 11 41 70                    - movss [rcx+70],xmm0
+// ---------- DONE INJECTING  ----------
+eurotrucks2.exe+2F1242: F3 0F 59 60 38                    - mulss xmm4,[rax+38]
+eurotrucks2.exe+2F1247: 0F 28 CC                          - movaps xmm1,xmm4
+eurotrucks2.exe+2F124A: E8 D1 F1 08 00                    - call eurotrucks2.exe+380420
+eurotrucks2.exe+2F124F: 4D 8B 9B 28 01 00 00              - mov r11,[r11+00000128]
+eurotrucks2.exe+2F1256: 41 C7 83 F8 00 00 00 00 00 80 BF  - mov [r11+000000F8],BF800000
+eurotrucks2.exe+2F1261: 48 83 C4 28                       - add rsp,28
+eurotrucks2.exe+2F1265: C3                                - ret 
+eurotrucks2.exe+2F1266: CC                                - int 3 
+eurotrucks2.exe+2F1267: CC                                - int 3 
+eurotrucks2.exe+2F1268: CC                                - int 3 
+}
+</AssemblerScript>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>117</ID>
+              <Description>"Disable Cabin Damage"</Description>
+              <Color>8080FF</Color>
+              <VariableType>Auto Assembler Script</VariableType>
+              <AssemblerScript>{ Game   : eurotrucks2.exe
+  Version: 
+  Date   : 2023-08-26
+  Author : Saniee
+
+  This script does blah blah blah
+}
+
+[ENABLE]
+//code from here to '[DISABLE]' will be used to enable the cheat
+
+ 
+ 
+aobscanmodule(CabinDamage,eurotrucks2.exe,F3 0F 11 89 28 01 00 00) // should be unique
+alloc(newmem,$1000,CabinDamage)
+
+label(code)
+label(return)
+
+newmem:
+
+code:
+  mov [rcx+00000128],(float)0
+  jmp return
+
+CabinDamage:
+  jmp newmem
+  nop 3
+return:
+registersymbol(CabinDamage)
+
+[DISABLE]
+//code from here till the end of the code will be used to disable the cheat
+CabinDamage:
+  db F3 0F 11 89 28 01 00 00
+
+unregistersymbol(*)
+dealloc(*)
+
+{
+// ORIGINAL CODE - INJECTION POINT: eurotrucks2.exe+2F1219
+
+eurotrucks2.exe+2F11F7: F3 0F 59 48 28           - mulss xmm1,[rax+28]
+eurotrucks2.exe+2F11FC: F3 0F 58 89 28 01 00 00  - addss xmm1,[rcx+00000128]
+eurotrucks2.exe+2F1204: 0F 2F C8                 - comiss xmm1,xmm0
+eurotrucks2.exe+2F1207: 73 05                    - jae eurotrucks2.exe+2F120E
+eurotrucks2.exe+2F1209: 0F 57 C9                 - xorps xmm1,xmm1
+eurotrucks2.exe+2F120C: EB 08                    - jmp eurotrucks2.exe+2F1216
+eurotrucks2.exe+2F120E: 0F 2F CA                 - comiss xmm1,xmm2
+eurotrucks2.exe+2F1211: 76 03                    - jna eurotrucks2.exe+2F1216
+eurotrucks2.exe+2F1213: 0F 28 CA                 - movaps xmm1,xmm2
+eurotrucks2.exe+2F1216: 0F 28 DC                 - movaps xmm3,xmm4
+// ---------- INJECTING HERE ----------
+eurotrucks2.exe+2F1219: F3 0F 11 89 28 01 00 00  - movss [rcx+00000128],xmm1
+// ---------- DONE INJECTING  ----------
+eurotrucks2.exe+2F1221: F3 0F 59 58 2C           - mulss xmm3,[rax+2C]
+eurotrucks2.exe+2F1226: F3 0F 58 59 70           - addss xmm3,[rcx+70]
+eurotrucks2.exe+2F122B: 0F 2F D8                 - comiss xmm3,xmm0
+eurotrucks2.exe+2F122E: 72 0D                    - jb eurotrucks2.exe+2F123D
+eurotrucks2.exe+2F1230: 0F 2F DA                 - comiss xmm3,xmm2
+eurotrucks2.exe+2F1233: 76 05                    - jna eurotrucks2.exe+2F123A
+eurotrucks2.exe+2F1235: 0F 28 C2                 - movaps xmm0,xmm2
+eurotrucks2.exe+2F1238: EB 03                    - jmp eurotrucks2.exe+2F123D
+eurotrucks2.exe+2F123A: 0F 28 C3                 - movaps xmm0,xmm3
+eurotrucks2.exe+2F123D: F3 0F 11 41 70           - movss [rcx+70],xmm0
+}
+</AssemblerScript>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>118</ID>
+              <Description>"Disable Wheel Damage"</Description>
+              <Color>8080FF</Color>
+              <VariableType>Auto Assembler Script</VariableType>
+              <AssemblerScript>{ Game   : eurotrucks2.exe
+  Version: 
+  Date   : 2023-08-26
+  Author : Saniee
+
+  This script does blah blah blah
+}
+
+[ENABLE]
+//code from here to '[DISABLE]' will be used to enable the cheat
+
+ 
+ 
+aobscanmodule(WheelDamage,eurotrucks2.exe,F3 41 0F 11 80 F8 00 00 00 C3 48) // should be unique
+alloc(newmem,$1000,WheelDamage)
+
+label(code)
+label(return)
+
+newmem:
+
+code:
+  mov [r8+000000F8],(float)0
+  jmp return
+
+WheelDamage:
+  jmp newmem
+  nop 4
+return:
+registersymbol(WheelDamage)
+
+[DISABLE]
+//code from here till the end of the code will be used to disable the cheat
+WheelDamage:
+  db F3 41 0F 11 80 F8 00 00 00
+
+unregistersymbol(*)
+dealloc(*)
+
+{
+// ORIGINAL CODE - INJECTION POINT: eurotrucks2.exe+3803F0
+
+eurotrucks2.exe+3803D0: 74 0D                       - je eurotrucks2.exe+3803DF
+eurotrucks2.exe+3803D2: F3 0F 58 00                 - addss xmm0,[rax]
+eurotrucks2.exe+3803D6: 48 83 C0 04                 - add rax,04
+eurotrucks2.exe+3803DA: 48 3B C1                    - cmp rax,rcx
+eurotrucks2.exe+3803DD: 75 F3                       - jne eurotrucks2.exe+3803D2
+eurotrucks2.exe+3803DF: 0F 57 C9                    - xorps xmm1,xmm1
+eurotrucks2.exe+3803E2: 48 85 D2                    - test rdx,rdx
+eurotrucks2.exe+3803E5: 78 13                       - js eurotrucks2.exe+3803FA
+eurotrucks2.exe+3803E7: F3 48 0F 2A CA              - cvtsi2ss xmm1,rdx
+eurotrucks2.exe+3803EC: F3 0F 5E C1                 - divss xmm0,xmm1
+// ---------- INJECTING HERE ----------
+eurotrucks2.exe+3803F0: F3 41 0F 11 80 F8 00 00 00  - movss [r8+000000F8],xmm0
+// ---------- DONE INJECTING  ----------
+eurotrucks2.exe+3803F9: C3                          - ret 
+eurotrucks2.exe+3803FA: 48 8B C2                    - mov rax,rdx
+eurotrucks2.exe+3803FD: 83 E2 01                    - and edx,01
+eurotrucks2.exe+380400: 48 D1 E8                    - shr rax,1
+eurotrucks2.exe+380403: 48 0B C2                    - or rax,rdx
+eurotrucks2.exe+380406: F3 48 0F 2A C8              - cvtsi2ss xmm1,rax
+eurotrucks2.exe+38040B: F3 0F 58 C9                 - addss xmm1,xmm1
+eurotrucks2.exe+38040F: F3 0F 5E C1                 - divss xmm0,xmm1
+eurotrucks2.exe+380413: F3 41 0F 11 80 F8 00 00 00  - movss [r8+000000F8],xmm0
+eurotrucks2.exe+38041C: C3                          - ret 
+}
+</AssemblerScript>
+            </CheatEntry>
+          </CheatEntries>
+        </CheatEntry>
+      </CheatEntries>
+    </CheatEntry>
+    <CheatEntry>
       <ID>45</ID>
-      <Description>"Misc. Functions"</Description>
+      <Description>"Fun"</Description>
       <Options moManualExpandCollapse="1"/>
       <Color>80FFFF</Color>
       <GroupHeader>1</GroupHeader>
@@ -460,12 +942,49 @@ eurotrucks2.exe+510CC6: 48 89 69 68              - mov [rcx+68],rbp
       </CheatEntries>
     </CheatEntry>
   </CheatEntries>
+  <CheatCodes>
+    <CodeEntry>
+      <Description>Fines,Repairs :mov [rcx+10],rax</Description>
+      <AddressString>eurotrucks2.exe+510C9E</AddressString>
+      <Before>
+        <Byte>C3</Byte>
+        <Byte>80</Byte>
+        <Byte>79</Byte>
+        <Byte>64</Byte>
+        <Byte>00</Byte>
+      </Before>
+      <Actual>
+        <Byte>48</Byte>
+        <Byte>89</Byte>
+        <Byte>41</Byte>
+        <Byte>10</Byte>
+      </Actual>
+      <After>
+        <Byte>0F</Byte>
+        <Byte>85</Byte>
+        <Byte>C5</Byte>
+        <Byte>00</Byte>
+        <Byte>00</Byte>
+      </After>
+    </CodeEntry>
+  </CheatCodes>
   <UserdefinedSymbols>
     <SymbolEntry>
       <Name>newmem</Name>
       <Address>FFFF0000</Address>
     </SymbolEntry>
   </UserdefinedSymbols>
+  <Comments>Truck Damage Base Adress byte array: F3 0F 11 99 20 01 00 00 F3 0F 59 48 34
+
+Truck Dmg Offsets
+Engine, 120
+Transmission, 124
+Chassis, 70
+Cabin, 128
+Wheels, F8
+
+Money Adress byte array: 80 7F 64 00 48 89 4F 10
+EXP Adress byte array: 8B 93 64 19 00 00 03 FA</Comments>
   <LuaScript>--TRAINERGENERATORSTART--
 --This is autogenerated code. Changing code in this block will
 --get erased and rewritten if you regenerate the trainer code
@@ -522,6 +1041,10 @@ function CloseClick()
 end
 
 --TRAINERGENERATORSTOP--
+function UDF1_CECheckbox1Change(sender)
+
+end
+
 </LuaScript>
   <DisassemblerComments>
     <DisassemblerComment>
@@ -530,13 +1053,14 @@ end
 </Comment>
     </DisassemblerComment>
     <DisassemblerComment>
-      <Address>"eurotrucks2.exe"+510C97</Address>
-      <Comment>Remove Money
+      <Address>"eurotrucks2.exe"+510B47</Address>
+      <Comment>Money add function
 </Comment>
     </DisassemblerComment>
     <DisassemblerComment>
-      <Address>"eurotrucks2.exe"+510C9E</Address>
-      <Comment>Change Money Value
+      <Address>"eurotrucks2.exe"+510C97</Address>
+      <Comment>Remove Money Function
+
 </Comment>
     </DisassemblerComment>
     <DisassemblerComment>
