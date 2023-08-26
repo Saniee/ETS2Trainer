@@ -1,7 +1,7 @@
 # [Latest Release](https://github.com/Saniee/ETS2Trainer/blob/main/eurotrucks2.CT)
 
 ### ETS2 Cheat Table
-![GitHub release (latest by SemVer and asset)](https://img.shields.io/github/downloads/Saniee/ETS2Trainer/latest/:assetName)
+![GitHub release (latest by SemVer and asset)](https://img.shields.io/github/downloads/Saniee/ETS2Trainer/latest/eurotrucks2.CT)
 ![TableImg](https://i.imgur.com/cv4AO4c.png)
 [Demo Video](https://youtu.be/3i87q3BSXZc)
 <br />
